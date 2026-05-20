@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <link rel="icon" type="image/png" href="im/386871e2-b6df-4b05-aa37-1df9fef0f175.jpg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$CLUTCH26 - The Next 1000x World Cup Play</title>
+    <style>
+      
+        :root {
+            --bg-deep: #02040a;
+            --bg-glass: rgba(10, 14, 23, 0.7);
+            --primary-red: #E31D2B;
+            --accent-gold: #F5A623;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-light: rgba(255,255,255,0.08);
+            --font-title: 'Arial Black', Impact, sans-serif;
+            --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary-red), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(2, 4, 10, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000; padding: 15px 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex; justify-content: center; gap: 30px;
+        }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: var(--accent-gold); }
+ 
+        .hero {
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; position: relative; padding-top: 60px;
+        }
+        .hero-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -1; opacity: 0.35;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: 0; width: 100%; height: 250px;
+            background: linear-gradient(to top, var(--bg-deep), transparent);
+        }
+        
+        .tagline { background: rgba(245, 166, 35, 0.15); border: 1px solid var(--accent-gold); color: var(--accent-gold); padding: 8px 24px; border-radius: 50px; font-weight: bold; letter-spacing: 2px; font-size: 1rem; text-transform: uppercase; margin-bottom: 20px; box-shadow: 0 0 20px rgba(245, 166, 35, 0.2); }
+        .title { font-family: var(--font-title); font-size: clamp(4rem, 10vw, 9rem); margin: 0; line-height: 1; letter-spacing: -2px; text-transform: uppercase; text-shadow: 0 0 40px rgba(227, 29, 43, 0.6); }
+        .subtitle { font-size: clamp(1.2rem, 3vw, 2rem); color: #fff; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; max-width: 800px; font-weight: bold; }
+        
+       
+        .countdown-container { margin-top: 40px; text-align: center; z-index: 2; }
+        .countdown-title { color: var(--accent-gold); font-family: var(--font-title); font-size: 1.2rem; margin-bottom: 10px; letter-spacing: 2px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        .countdown-timer { display: flex; justify-content: center; gap: 15px; }
+        .time-box { background: rgba(227, 29, 43, 0.85); border: 2px solid var(--primary-red); padding: 10px 20px; border-radius: 12px; min-width: 70px; box-shadow: 0 10px 30px rgba(227, 29, 43, 0.5); transform: skewX(-5deg); backdrop-filter: blur(5px); }
+        .time-box span { display: block; font-family: var(--font-title); font-size: 3rem; line-height: 1; color: #fff; text-shadow: 2px 2px 0px rgba(0,0,0,0.3); }
+        .time-box small { font-size: 0.8rem; font-weight: bold; letter-spacing: 2px; color: rgba(255,255,255,0.9); display: block; margin-top: 5px; }
+
+       
+        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-family: var(--font-title); font-size: 4rem; margin: 0; text-transform: uppercase; }
+
+        .timeline-wrap { position: relative; }
+        .timeline-wrap::before {
+            content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--primary-red), var(--accent-gold), transparent);
+            transform: translateX(-50%); opacity: 0.5;
+        }
+
+        .story-block { display: flex; justify-content: space-between; align-items: center; margin-bottom: 120px; position: relative; }
+        .story-block:nth-child(even) { flex-direction: row-reverse; }
+
+        .story-content { width: 45%; background: var(--bg-glass); padding: 40px; border-radius: 24px; border: 1px solid var(--border-light); box-shadow: 0 20px 50px rgba(0,0,0,0.5); backdrop-filter: blur(10px); transition: transform 0.3s; }
+        .story-content:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+
+        .chapter { font-family: monospace; color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 10px; display: block; letter-spacing: 2px; font-weight: bold; }
+        .story-content h3 { font-size: 2.5rem; margin: 0 0 20px 0; line-height: 1.2; text-transform: uppercase; font-family: var(--font-title); }
+        .story-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 15px; }
+
+        .story-img { width: 45%; border-radius: 24px; border: 2px solid var(--border-light); box-shadow: 0 0 40px rgba(0,0,0,0.4); object-fit: contain; }
+
+       
+        .trophy-banner {
+            width: 100%; height: 500px;
+            
+            background-image: url('im/a3.png');
+            background-size: cover; background-position: center center; background-attachment: fixed;
+            position: relative; display: flex; align-items: center; justify-content: center;
+            border-top: 2px solid var(--accent-gold); border-bottom: 2px solid var(--accent-gold);
+        }
+        .trophy-overlay { position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.6); }
+        .trophy-text { position: relative; z-index: 2; text-align: center; }
+
+    
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .stat-card { background: var(--bg-glass); border: 1px solid var(--border-light); padding: 40px; border-radius: 20px; text-align: center; }
+        .stat-val { font-size: 3.5rem; font-family: var(--font-title); color: var(--primary-red); margin-bottom: 10px; line-height: 1; }
+        
+        .roadmap-card { background: var(--bg-glass); border-left: 4px solid var(--primary-red); padding: 40px; border-radius: 0 20px 20px 0; margin-bottom: 30px; }
+        .phase-title { font-size: 1.8rem; color: var(--accent-gold); font-weight: bold; margin: 0 0 15px 0; }
+        .roadmap-list { list-style: none; padding: 0; margin: 0; }
+        .roadmap-list li { margin-bottom: 10px; padding-left: 25px; position: relative; color: var(--text-muted); font-size: 1.1rem; }
+        .roadmap-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary-red); font-weight: bold; }
+
+        .step-box { background: var(--bg-glass); padding: 30px; border-radius: 20px; border: 1px solid var(--border-light); position: relative; }
+        .step-num { position: absolute; top: -20px; left: 30px; background: var(--primary-red); color: #fff; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; font-size: 1.2rem; }
+
+        .cta-box { text-align: center; padding: 80px 20px; background: rgba(227, 29, 43, 0.05); border: 2px dashed var(--accent-gold); border-radius: 30px; margin-top: 50px; }
+        .ca-text { font-family: monospace; font-size: clamp(1rem, 2.5vw, 1.5rem); background: #000; padding: 20px 30px; border-radius: 50px; display: inline-block; margin: 30px 0; color: #fff; word-break: break-all; border: 1px solid var(--border-light); }
+        .btn-main { background: var(--primary-red); color: #fff; padding: 20px 60px; font-size: 1.8rem; font-weight: 900; border-radius: 50px; text-decoration: none; text-transform: uppercase; display: inline-block; transition: 0.3s; box-shadow: 0 10px 30px rgba(227, 29, 43, 0.4); }
+        .btn-main:hover { background: #ff2a3a; transform: scale(1.05); box-shadow: 0 15px 40px rgba(227, 29, 43, 0.6); }
+
+        @media (max-width: 900px) {
+            nav { gap: 15px; font-size: 0.8rem; }
+            .timeline-wrap::before { left: 0; }
+            .story-block, .story-block:nth-child(even) { flex-direction: column; gap: 30px; margin-bottom: 80px; }
+            .story-content, .story-img { width: 100%; }
+        }
+         
+        .read-more-link {
+            display: inline-flex; align-items: center; margin-top: 15px;
+            color: var(--accent-gold); font-weight: bold; text-decoration: none;
+            font-size: 0.95rem; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .read-more-link:hover { color: var(--primary-red); transform: translateX(8px); }
+         
+        .social-links {
+            display: flex; justify-content: center; gap: 20px;
+            margin-bottom: 30px; margin-top: 10px;
+        }
+        .social-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 12px 30px; border-radius: 50px;
+            border: 1px solid var(--border-light);
+            color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem;
+            transition: all 0.3s ease; background: rgba(255,255,255,0.05);
+        }
+        .social-btn:hover {
+            border-color: var(--accent-gold); color: var(--accent-gold);
+            transform: translateY(-3px); background: rgba(245, 166, 35, 0.1);
+        }
+        
+        @media (max-width: 600px) {
+            .social-links { flex-direction: column; gap: 15px; padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#lore">The Lore</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#buy">How to Buy</a>
+    </nav>
+
+    <!-- 首屏 Hero -->
+    <section id="hero" class="hero">
+        
+        <img src="im/a5.png" class="hero-bg" alt="Clutch Action">
+        
+        <div class="tagline">Live on Solana</div>
+        <h1 class="title gradient-text">CLUTCH26</h1>
+        <p class="subtitle">The Next 1000X World Cup Mascot Play</p>
+        
+       
+        <div class="countdown-container">
+            <div class="countdown-title">THE WORLD CUP KICKS OFF IN:</div>
+            <div class="countdown-timer" id="countdown">
+                <div class="time-box"><span id="days">00</span><small>DAYS</small></div>
+                <div class="time-box"><span id="hours">00</span><small>HOURS</small></div>
+                <div class="time-box"><span id="minutes">00</span><small>MINS</small></div>
+                <div class="time-box"><span id="seconds">00</span><small>SECS</small></div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="lore" class="container">
+        <div class="section-header">
+            <h2>The <span class="gradient-text">Narrative</span></h2>
+            <p style="font-size: 1.2rem; color: var(--text-muted);">How an undervalued $CLUTCH26 is positioned to become a global cultural phenomenon.</p>
+        </div>
+
+        <div class="timeline-wrap">
+           
+            <div class="story-block">
+                <div class="story-content">
+                    <span class="chapter">CHAPTER I // THE MACRO TAILWINDS</span>
+                    <h3>Mascot Super-Cycle</h3>
+                    <p>In 2022, the World Cup meme narrative hit a $35M market cap while BTC was struggling at $19k. Today, the liquidity environment is completely different—the ceiling is significantly higher.</p>
+                <a href="https://x.com/Clutch26coin" target="_blank" class="read-more-link">Read full thread on X ➔</a>
+                </div>
+                
+                <img src="im/a7.png" class="story-img" alt="Mascot Super Cycle">
+            </div>
+
+            
+            <div class="story-block">
+                <div class="story-content">
+                    <span class="chapter">CHAPTER II // THE MAINNET PLAY</span>
+                    <h3>Reject Cabal, <br>Embrace OG</h3>
+                    <p>While others play rigged games with "bundlers" on Solana, the real diamond hands are accumulating on Solana Mainnet. The Mainnet OG contract is currently sitting at a tiny market cap—criminally undervalued.</p>
+                <a href="https://x.com/Clutch26coin" target="_blank" class="read-more-link">Read full thread on X ➔</a>
+                </div>
+               
+                <img src="im/a10.png" class="story-img" alt="Reject Cabal, Embrace OG">
+            </div>
+
+          
+            <div class="story-block">
+                <div class="story-content">
+                    <span class="chapter">CHAPTER III // THE ADVANTAGE</span>
+                    <h3>USA Home Court Top-tier Brand Collab Ads</h3>
+                    <p>Global Corporate SynergyOnce the opening ceremony kicks off, the mascot will be everywhere. Global giants like Pepsi, Coca-Cola, Jordan, Nike, and Adidas will integrate the mascot into their marketing campaigns. This is inevitable massive-scale "free marketing" that will onboard millions of eyes to the mascot's image.</p>
+                    <a href="https://x.com/Clutch26coin" target="_blank" class="read-more-link">Read full thread on X ➔</a>
+                </div>
+                
+                <img src="im/a11.png" class="story-img" alt="USA Home Court Advantage">
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="trophy-banner">
+        <div class="trophy-overlay"></div>
+        <div class="trophy-text container">
+            <h2 style="font-family: var(--font-title); font-size: 4rem; margin: 0; color: var(--accent-gold); text-transform: uppercase;">History in the making.</h2>
+            <p style="font-size: 1.5rem; color: #fff;">One Game. One World. Our Future.</p>
+        </div>
+    </section>
+
+   
+    <section id="tokenomics" class="container">
+        <div class="section-header">
+            <h2>Token<span class="gradient-text">omics</span></h2>
+            <p style="font-size: 1.2rem; color: var(--text-muted);">Designed for absolute community dominance and organic growth.</p>
+        </div>
+        <div class="grid-3">
+            <div class="stat-card">
+                <div class="stat-val">SAFETY</div>
+                <div style="font-size: 1.2rem; font-weight: bold; color: #fff; margin-bottom: 10px;">Tokens launched on the Klik launch platform</div>
+                <div style="color: var(--text-muted);">
+                    <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=pumppump" target="_blank" class="read-more-link">Click here to verify ➔</a>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">BURNED</div>
+                <div style="font-size: 1.2rem; font-weight: bold; color: #fff; margin-bottom: 10px;">Liquidity Pool</div>
+                <div style="color: var(--text-muted);">LP tokens have been permanently sent to the dead address.</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">REVOKED</div>
+                <div style="font-size: 1.2rem; font-weight: bold; color: #fff; margin-bottom: 10px;">Smart Contract</div>
+                <div style="color: var(--text-muted);">Contract ownership renounced. Unruggable and secure.</div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="roadmap" class="container" style="padding-top: 0;">
+        <div class="section-header">
+            <h2>The <span class="gradient-text">Roadmap</span></h2>
+        </div>
+        <div class="roadmap-card">
+            <h3 class="phase-title">Phase 1: The Foundation</h3>
+            <ul class="roadmap-list">
+                <li>Solana Mainnet Stealth Launch</li>
+                <li>Community Formation & Diamond Hand Consolidation</li>
+                <li>Initial Meme & Lore Creation on X (Twitter)</li>
+            </ul>
+        </div>
+        <div class="roadmap-card" style="border-color: var(--accent-gold);">
+            <h3 class="phase-title">Phase 2: The Acceleration</h3>
+            <ul class="roadmap-list">
+                <li>TikTok & Short Video Viral Campaigns</li>
+                <li>Corporate Synergy Speculation (Pepsi, Nike, etc.)</li>
+                <li>Tier 2 Centralized Exchange (CEX) Listings</li>
+            </ul>
+        </div>
+        <div class="roadmap-card" style="border-color: #fff;">
+            <h3 class="phase-title">Phase 3: World Cup Takeover</h3>
+            <ul class="roadmap-list">
+                <li>1000X Valuation Milestone</li>
+                <li>Global Mainstream Media Coverage</li>
+                
+            </ul>
+        </div>
+    </section>
+
+     
+    <section id="buy" class="container" style="padding-top: 0;">
+        <div class="section-header">
+            <h2>How to <span class="gradient-text">Buy</span></h2>
+        </div>
+        <div class="grid-3" style="margin-bottom: 50px;">
+            <div class="step-box">
+                <div class="step-num">1</div>
+                <h3 style="margin-top: 10px;">Create Wallet</h3>
+                <p style="color: var(--text-muted);">Download Phantom or your wallet of choice.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-num">2</div>
+                <h3 style="margin-top: 10px;">Get Some SOL</h3>
+                <p style="color: var(--text-muted);">Have SOL in your wallet to switch to $CLUTCH26.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-num">3</div>
+                <h3 style="margin-top: 10px;">Swap on Pumpswap</h3>
+                <p style="color: var(--text-muted);">Paste the CA, and swap your SOL for $CLUTCH26.</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h2 style="font-family: var(--font-title); font-size: 3rem; margin: 0; text-transform: uppercase;">JOIN IN $CLUTCH26</h2>
+            <div class="ca-text">pumppump</div>
+            <br>
+            <a href="https://app.uniswap.org/swap?&chain=mainnet&use=v2&outputCurrency=0x69dc9bf4c7ce31f36e48b279bf3aab32b053b298" target="_blank" class="btn-main">Buy $CLUTCH26 on Pumpswap</a>
+        </div>
+    </section>
+
+   <footer style="text-align: center; padding: 60px 20px 40px; color: var(--text-muted); border-top: 1px solid var(--border-light);">
+        
+        
+        <div class="social-links">
+            <!-- X (Twitter) 链接 -->
+            <a href="https://x.com/Clutch26coin" target="_blank" class="social-btn">
+                𝕏 Follow on X
+            </a>
+            
+            <!-- Telegram 链接 -->
+           
+        </div>
+
+        <p style="margin-top: 30px;">$CLUTCH26 is a meme coin. Protect the game. Not financial advice.</p>
+        <p>© 2026 Clutch Movement. All rights reserved.</p>
+    </footer>
+
+   
+    <script>
+        
+       const countDownDate = new Date("June 11, 2026 12:00:00 GMT-0500").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<div class='time-box'><span>LIVE</span><small>NOW</small></div>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
